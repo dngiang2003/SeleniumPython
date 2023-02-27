@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xử lý Prompt</title>
+</head>
+<body>
+    <h1>Xử lý Prompt Selenium Python</h1>
+    <button id="btn-submit" onclick="myFunction()">Nhấn vào đây</button>
+    <p id="result"></p>
+</body>
+<script>
+    function myFunction() {
+        const p = document.getElementById("result");
+        let result = prompt("Nhập Nội dung của bạn", "Đây là nội dung mặc định");
+        if (result != "") {
+            p.innerHTML = "Kết quả: " + result;
+            p.style.color = "blue";
+        } else {
+            p.innerHTML = "Lỗi!, vui lòng nhập dữ liệu";
+            p.style.color = "rgb(240, 22, 87)";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Alert</title>
+</head>
+<body>
+    <h1>Xử lý Alert trong Selenium</h1>
+    <button onclick="myFunction()">Nhấn vào đây</button>
+    <h2 id="result"></h2>
+</body>
+<script>
+    function myFunction() {
+        let text;
+        if (confirm("Press a button!") == true) {
+            text = "Bạn vừa nhấn OK!";
+            document.getElementById("result").style.color = "rgb(240, 22, 87)";
+        } else {
+            text = "Bạn vừa nhấn Cancel!";
+            document.getElementById("result").style.color = "blue";
+        }
+        document.getElementById("result").innerHTML = text;
+    }
+</script>
+</html>
