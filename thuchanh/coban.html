@@ -7,14 +7,19 @@
     <title>Thực hành thao tác cơ bản</title>
     <script>
         function sayHello() {
-            window.alert("Bạn vừa ấn vào nút!")
+            const input = document.getElementById("input").value;
+            const h3 = document.getElementById("result");
+            h3.innerText = "Kết quả: " + input;
+            h3.style.color = "red";
         }
     </script>
 </head>
 <body>
     <h1>Tài liệu Selenium Python cơ bản</h1>
     <p style="font-size: 25px; color: rgb(246, 70, 132);">Xin chào các bạn!</p>
+    <input style="padding: 10px;" type="text" name="input" id="input">
     <button id="btnAlert" onclick="sayHello()">Nhấn vào đây</button>
+    <h3 id="result">Kết quả: </h3>
     <h2 name="tag-h2" id="caption">Những điều tuyệt vời được sinh ra từ điều giản đơn.</h2>
 </body>
 </html>
