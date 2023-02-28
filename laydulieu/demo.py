@@ -3,26 +3,22 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 driver = webdriver.Chrome()
-driver.get("https://dongocgiang.click/thuchanh/coban.html")
+driver.get("https://eop.edu.vn")
 
-# Điền "Nội dung" vào ô input có ID là "input"
+# Tiến hành điền mã sinh viên
 sleep(2)
-driver.find_element(By.ID, "input").send_keys("Nội dung")
+maSinhVien = "2021603812"
+driver.find_element(By.XPATH, '//*[@id="kehoachhoctap"]/div/div[1]/div[1]/input').send_keys(maSinhVien)
 
-# Click vào phần tử có ID là "btnAlert"
+# Ấn vào nút "Tra cứu" để gửi yêu cầu lên server
 sleep(2)
-driver.find_element(By.ID, "btnAlert").click()
+driver.find_element(By.XPATH, '//*[@id="kehoachhoctap"]/div/div[1]/div[2]/button').click()
 
-# Lấy text của phần tử có ID là "result"
+# Tiến hành lấy ra tên sinh viên
 sleep(2)
-result = driver.find_element(By.ID, "result").text
-print(result)
-
-# Lấy giá trị của thuộc tính trong thẻ p
-sleep(2)
-p = driver.find_element(By.TAG_NAME, "p")
-value = p.get_attribute("style")
-print(value)
+tenSinhVien = driver.find_element(By.XPATH, '//*[@id="kehoachhoctap"]/div/div[3]/h4/b').text
+print(tenSinhVien) 
+# Lê Thu Phương
 
 # Đóng Chrome
 sleep(3)
